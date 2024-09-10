@@ -1,0 +1,56 @@
+colvarsTrajFrequency		500
+colvarsRestartFrequency		50000
+
+colvar {
+    name phi
+    lowerBoundary -180.0
+    upperBoundary 180.0
+    width 5.0
+    dihedral {
+    group1 {
+             atomNumbers { 5 }
+        }
+    group2 {
+             atomNumbers { 7 }
+        }
+    group3 {
+             atomNumbers { 9 }
+        }
+    group4 {
+             atomNumbers { 15 }
+        }
+    }
+}
+
+colvar {
+    name psi
+    lowerBoundary -180.0
+    upperBoundary 180.0
+    width 5.0
+    dihedral {
+    group1 {
+             atomNumbers { 7 }
+        }
+    group2 {
+             atomNumbers { 9 }
+        }
+    group3 {
+             atomNumbers { 15 }
+        }
+    group4 {
+             atomNumbers { 17 }
+        }
+    }
+}
+
+opes_metad {
+  colvars phi psi
+  newHillFrequency 500
+  barrier 11.950286806883364
+  gaussianSigma 8.594366926962348 8.594366926962348
+  gaussianSigmaMin 0.5729577951308232 0.5729577951308232
+  printTrajectoryFrequency 500
+  pmf on
+  pmfColvars phi psi
+  outputEnergy on
+}

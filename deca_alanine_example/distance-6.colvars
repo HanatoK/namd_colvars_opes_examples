@@ -1,0 +1,35 @@
+colvarsTrajFrequency      1000
+colvarsRestartFrequency   50000
+
+colvar {
+    name AtomDistance
+
+    width 0.1
+    lowerboundary 12.0
+    upperboundary 32.0
+    lowerWall 12.0
+    upperWall 32.0
+    lowerwallconstant 100.0
+    upperwallconstant 100.0
+
+    distance {
+        group1 {
+            atomnumbers { 10 }
+        }
+        group2 {
+            atomnumbers { 92 }
+        }
+    }
+}
+
+opes_metad {
+    colvars AtomDistance
+    newHillFrequency 1000
+    barrier 40.0
+    gaussianSigma 0.8
+    printTrajectoryFrequency 500
+    pmf on
+    pmfColvars AtomDistance
+    pmfHistoryFrequency 50000
+    outputEnergy on
+}
