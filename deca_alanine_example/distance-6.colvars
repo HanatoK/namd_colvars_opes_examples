@@ -25,7 +25,7 @@ colvar {
 opes_metad {
     colvars AtomDistance
     newHillFrequency 1000
-    barrier 40.0
+    barrier 30.0
     gaussianSigma 0.8
     printTrajectoryFrequency 500
     pmf on
